@@ -18,13 +18,12 @@ router.post('/login',(req,res)=>{
   
     console.log(password);
     
-    connection.query("select * from library.student where first_name = ?",[username],(error, results,fields)=>{
+    connection.query("select * from library.student where username = ?",[username],(error, results,fields)=>{
       if (error) throw error
       console.log(results);
       
         if(results.length > 0 && bcrypt.compare(password,results[0].password)){
-          getHome()
-            res.render('books')
+            res.redirect('/books')
             req.session.loggedin = true;
             req.session.username = username;
         }

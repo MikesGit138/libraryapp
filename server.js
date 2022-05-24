@@ -13,6 +13,8 @@ const mysql = require('mysql')
 const booksRoute = require('./routes/books')
 const studentRoute = require('./routes/student')
 const loginRoute = require('./routes/login')
+const homeRoute = require('./routes/home')
+
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -29,15 +31,12 @@ app.use(session({
 }))
 
 
-
 //routes
 app.use('/', booksRoute);
 app.use('/', studentRoute);
 app.use('/', loginRoute);
+app.use('/', homeRoute);
 
-app.get('/', (req,res) =>{
-    res.send('server works')
-})
 
 //port listening
 app.listen(port, ()=> { console.log(`Server running on http://localhost:${port}/`)})
