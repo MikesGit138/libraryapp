@@ -1,7 +1,7 @@
 const express = require('express');
 const port = 9000
 const bodyParser = require('body-parser');
-// const db = require('./database/db')
+const db = require('./database/db')
 const path = require('path');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
@@ -15,6 +15,11 @@ app.use(express.static('public'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+
+
+app.get('/', (req,res) =>{
+    res.send('server works')
+})
 
 //port listening
 app.listen(port, ()=> { console.log(`Server running on http://localhost:${port}/`)})
