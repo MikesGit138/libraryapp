@@ -13,6 +13,7 @@ const mysql = require('mysql')
 const booksRoute = require('./routes/books')
 const studentRoute = require('./routes/student')
 const loginRoute = require('./routes/login')
+const regRoute = require('./routes/register')
 const homeRoute = require('./routes/home')
 
 
@@ -36,6 +37,8 @@ app.use('/', booksRoute);
 app.use('/', studentRoute);
 app.use('/', loginRoute);
 app.use('/', homeRoute);
+app.use('/', regRoute);
+
 
 
 //port listening
