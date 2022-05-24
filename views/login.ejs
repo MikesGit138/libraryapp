@@ -1,6 +1,9 @@
-<section class="flex place-content-center container justify-center items-center h-screen">
+<head>
+    <link rel="stylesheet" href="output.css">
+</head>
+<section class="login-ctn">
     <div
-        class="bg-emerald-500 flex-col container text-center space-y-9 bold text-4xl w-1/2 py-9 rounded justify-center">
+        class="login">
         <h1 class="text-slate-700 text-7xl font-bold">Login</h1>
         <form action="/login" method="post">
             <%# if (message.error) { %>
@@ -20,7 +23,6 @@
                         <label for="password" class="text-slate-800">Password</label>
                         <input type="password" id="password" name="password" class="rounded mr-7" required>
                     </div>
-                    <div>
 
                     </div>
                     <button type="submit"

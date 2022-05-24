@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(0, 255, 183);
+  font-family: sans-serif;
+}
+body .home-ctn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+body button {
+  background-color: rgb(8, 139, 87);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+}
+body button:hover {
+  background-color: aqua;
+  color: black;
+}
+body .login-ctn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: rgb(63, 71, 73);
+  padding: 20px;
+  color: white;
+}
+body .login-ctn .login {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+/*# sourceMappingURL=output.css.map */
