@@ -1,0 +1,25 @@
+<h1>Books routes works!</h1>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Name of the Book</th>
+        <th>Author</th>
+        <th>Action</th>
+    </tr>
+    <%  books.forEach( (book) => { %>
+        <tr>
+            <td>
+                <%= book.id %>
+            </td>
+            <td>
+                <%= book.book_name %>
+            </td>
+            <td>
+                <%= book.author %>
+            </td>
+            <td>
+                <a href="borrow/<%= book.id %>"><button>Borrow</button></a>
+            </td>
+        </tr>
+        <% }) %>
+</table>
