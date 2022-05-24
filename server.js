@@ -9,6 +9,9 @@ const app = express();
 const session = require('express-session')
 const mysql = require('mysql')
 
+const passport = require('passport')
+
+
 //route variables
 const booksRoute = require('./routes/books')
 const studentRoute = require('./routes/student')
@@ -28,9 +31,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true
 }))
 
+app.use(passport.initialize())
+app.use(passport.session())
 
 //routes
 app.use('/', booksRoute);

@@ -2,8 +2,10 @@ const express = require('express')
 const router = express.Router();
 const session = require('express-session')
 const bcrypt = require('bcrypt')
+const passport = require('passport')
 
 const connection = require('../database/db')
+
 
 router.get('/login', (req, res) => {
      res.render('login')
@@ -25,7 +27,6 @@ router.post('/login',(req,res)=>{
         if(results.length > 0 && bcrypt.compare(password,results[0].password)){
             res.redirect('/books')
             req.session.loggedin = true;
-            req.session.username = username;
         }
   
         else{
