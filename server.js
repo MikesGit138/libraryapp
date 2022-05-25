@@ -18,7 +18,7 @@ const studentRoute = require('./routes/student')
 const loginRoute = require('./routes/login')
 const regRoute = require('./routes/register')
 const homeRoute = require('./routes/home')
-
+const liblogRoute = require('./routes/liblogin')
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -43,6 +43,7 @@ app.use('/', studentRoute);
 app.use('/', loginRoute);
 app.use('/', homeRoute);
 app.use('/', regRoute);
+app.use('/', liblogRoute);
 
 
 
